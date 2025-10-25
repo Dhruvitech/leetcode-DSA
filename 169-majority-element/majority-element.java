@@ -1,20 +1,15 @@
-import java.util.HashMap;
-
 class Solution {
     public int majorityElement(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int n = nums.length;
+        int count = 0;
+        Integer candidate = null;
 
         for (int num : nums) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
-
-            // If this number appears more than n/2 times, return it
-            if (map.get(num) > n / 2) {
-                return num;
+            if (count == 0) {
+                candidate = num;
             }
+            count += (num == candidate) ? 1 : -1;
         }
 
-        // This line will never be reached (problem guarantees a majority element)
-        return -1;
+        return candidate;
     }
 }
