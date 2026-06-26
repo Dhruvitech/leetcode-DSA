@@ -4,6 +4,11 @@ class Solution {
         int high=x;
         int ans=0; //for base value like in sqrt of 8 is 2.8284.. we will store 2 
 
+        if(x == 0) 
+        {
+            return 0;
+        }
+
         while(low<=high){
             int mid =low+(high-low)/2;
 
