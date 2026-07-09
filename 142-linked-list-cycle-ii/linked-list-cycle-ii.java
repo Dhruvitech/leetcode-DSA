@@ -24,9 +24,9 @@ class Solution {
 
             if (slow == fast) {
 
-                while (entry != slow) {
+                while (entry != fast) {
                     entry = entry.next;
-                    slow = slow.next;
+                    fast = fast.next;
                 }
 
                 return entry;
